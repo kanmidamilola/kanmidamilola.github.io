@@ -1,228 +1,286 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Damilola Oyekanmi — Operations & IT Project Manager</title>
 
-<title>Damilola Oyekanmi | Operations & IT Project Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<style>
+:root {
+--ink:#0f0e0d;
+--paper:#f5f2ec;
+--accent:#2d5a4b;
+--accent2:#8b3a2f;
+--mid:#6b6560;
+--line:rgba(0,0,0,0.1);
+}
 
+body{
+margin:0;
+font-family:'DM Sans',sans-serif;
+background:var(--paper);
+color:var(--ink);
+scroll-behavior:smooth;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:var(--paper);
+border-bottom:1px solid var(--line);
+z-index:100;
+}
+
+nav a{ text-decoration:none; color:var(--mid); font-size:12px; letter-spacing:1px; }
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+min-height:100vh;
+padding-top:80px;
+}
+
+.hero-left{
+padding:80px;
+}
+
+.hero-name{
+font-family:'Cormorant Garamond',serif;
+font-size:60px;
+}
+
+.hero-desc{
+margin-top:20px;
+max-width:400px;
+}
+
+.hero-cred{
+margin-top:10px;
+font-style:italic;
+color:var(--mid);
+}
+
+.hero-cta{
+margin-top:30px;
+display:inline-block;
+padding:12px 24px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+}
+
+.hero-right{
+background:var(--accent);
+color:white;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+}
+
+.stat{margin-bottom:20px;}
+
+section{
+padding:80px 40px;
+opacity:0;
+transform:translateY(40px);
+transition:all 0.6s ease;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.project-card{
+border:1px solid var(--line);
+padding:20px;
+margin-bottom:20px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+}
+
+button,a.button{
+display:inline-block;
+margin-top:10px;
+padding:8px 14px;
+border:1px solid var(--ink);
+text-decoration:none;
+color:var(--ink);
+font-size:12px;
+}
+
+</style>
 </head>
 
 <body>
 
-<header class="navbar">
-
-<div class="logo">Damilola Oyekanmi</div>
-
 <nav>
-
+<div>Damilola Oyekanmi</div>
+<div>
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
-<a href="#work">Work Samples</a>
-<a href="#skills">Skills</a>
+<a href="#samples">Work Samples</a>
+<a href="#insights">Insights</a>
 <a href="#contact">Contact</a>
-
+</div>
 </nav>
-
-</header>
-
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-left">
+<h1 class="hero-name">Damilola Oyekanmi</h1>
 
-<div class="hero-text">
-
-<h1>Damilola Oyekanmi</h1>
-
-<h2>Operations & IT Project Manager</h2>
-
-<p>
-I build systems, lead teams, and manage end-to-end delivery — from operational foundations to live technology products.
+<p class="hero-desc">
+I lead projects and build the systems that keep teams aligned and delivery on track, from operational foundations to the execution of live technology products.
 </p>
 
-<div class="hero-buttons">
+<p class="hero-cred">
+IT Project Manager with experience coordinating cross-functional teams across product, engineering, and design.
+</p>
 
-<a class="primary-btn" href="#projects">View My Work</a>
+<a href="#contact" class="hero-cta">Let's work together</a>
 
-<a class="secondary-btn" href="resume/Damilola_Oyekanmi_Resume.pdf" download>
-Download Resume
-</a>
-
-</div>
+<a href="/docs/damilola-oyekanmi-resume.pdf" class="button" download>Download Resume</a>
 
 </div>
 
-<div class="hero-image">
+<div class="hero-right">
 
-<img src="assets/myphoto.jpg" alt="Damilola Oyekanmi">
+<p>
+When you hire me as your project manager, you are not just getting someone to manage tasks or tools. You are bringing in a system that protects your revenue, ensures execution, prevents delays, and keeps your team aligned without operational overwhelm.
+</p>
 
-</div>
+<div class="stat">2+ Years in Operations & Project Management</div>
+<div class="stat">20+ Cross-functional team members led</div>
+<div class="stat">30% Reduction in project delays</div>
+<div class="stat">Projects delivered across agency and product teams</div>
 
 </div>
 
 </section>
-
 
 <section id="about">
-
-<h2>Who I Am</h2>
+<h2>Who I am</h2>
 
 <p>
+I'm an Operations and IT Project Manager focused on building systems that work in real-world team environments.
+</p>
 
-I'm an Operations and IT Project Manager who builds systems that keep teams aligned and delivery moving.  
-My work sits at the intersection of people, process, and technology delivery.
-
+<p>
+<strong>Operations taught me what good execution looks like from the inside. Project management gave me the framework to lead it at scale.</strong>
 </p>
 
 </section>
-
-
 
 <section id="experience">
-
 <h2>Experience</h2>
 
-<div class="experience-card">
-
-<h3>IT Project Manager — Stanix Consulting</h3>
-
-<p>
-Lead project manager on the IrokoEV platform coordinating a 20-person cross-functional team across engineering, design, QA, and product.
-</p>
-
-</div>
-
-
-<div class="experience-card">
-
-<h3>Programs & Project Lead — Sozo Studio</h3>
-
-<p>
-
-Built the operational infrastructure for a growing creative studio including onboarding systems, SOP documentation, and delivery frameworks.
-
-</p>
-
-</div>
-
-</section>
-
-
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-
-<div class="project-card">
-
-<h3>IrokoEV Platform</h3>
-
-<p>Electric vehicle platform development coordination.</p>
-
-<a href="projects/irokoev-case-study.html">View Case Study</a>
-
-</div>
-
-
-
-<div class="project-card">
-
-<h3>Sozo Studio Operations Build</h3>
-
-<p>Operational systems design and onboarding infrastructure.</p>
-
-<a href="projects/sozo-operations-case-study.html">View Case Study</a>
-
-</div>
-
-</section>
-
-
-
-<section id="work">
-
-<h2>Work Samples</h2>
-
-
-<div class="work-card">
-
-<h3>Sprint Planning Template</h3>
-
-<a href="work-samples/sprint-planning-template.pdf" download>
-Download Sample
-</a>
-
-</div>
-
-
-<div class="work-card">
-
-<h3>Project Status Update Template</h3>
-
-<a href="work-samples/project-status-update-template.pdf" download>
-Download Sample
-</a>
-
-</div>
-
-
-<div class="work-card">
-
-<h3>Onboarding Process Map</h3>
-
-<a href="work-samples/onboarding-process-map.pdf" download>
-Download Sample
-</a>
-
-</div>
-
-</section>
-
-
-
-<section id="skills">
-
-<h2>Skills & Tools</h2>
+<p><strong>IT Project Manager</strong><br>
+Stanix Consulting<br>
+Nov 2025 to Mar 2026</p>
 
 <ul>
+<li>Coordinated a 20 member cross-functional team</li>
+<li>Managed dependencies and sprint delivery</li>
+<li>Maintained stakeholder visibility</li>
+</ul>
 
-<li>Agile & Waterfall Project Management</li>
-<li>Stakeholder Management</li>
-<li>SOP Development</li>
-<li>Process Design</li>
-<li>Jira · Notion · Trello</li>
-<li>Google Workspace</li>
+<p><strong>Programs & Project Lead</strong><br>
+Sozo Studio<br>
+Jun 2024 to Present</p>
 
+<ul>
+<li>Built operational systems and workflows</li>
+<li>Managed client delivery and communication</li>
+<li>Reduced project delays by 30%</li>
 </ul>
 
 </section>
 
+<section id="projects">
+<h2>Projects</h2>
 
+<div class="project-card">
+<h3>IrokoEV Platform</h3>
+<p>Electric vehicle platform in development.</p>
 
-<section id="contact">
+<a href="irokoev-case-study.html">View Case Study</a>
+<a href="https://www.irokoev.com" target="_blank">Visit Product</a>
+</div>
 
-<h2>Let's Connect</h2>
+<div class="project-card">
+<h3>Sozo Studio Operations Build</h3>
+<p>Operational system design and implementation.</p>
 
-<p>
-Open to IT Project Management Associate, Junior Project Manager, and Operations roles.
-</p>
+<a href="sozo-operations.html">View Operational Build</a>
+</div>
 
 </section>
 
+<section id="samples">
+<h2>Work Samples</h2>
 
-<footer>
+<a href="/docs/sprint-planning-template.pdf" download>Sprint Planning Template</a><br>
+<a href="/docs/project-status-report.pdf" download>Project Status Report</a><br>
+<a href="/docs/onboarding-process-map.pdf" download>Onboarding Process Map</a>
 
-<p>© 2026 Damilola Oyekanmi</p>
+</section>
 
-</footer>
+<section id="insights">
+<h2>Insights</h2>
 
-<script src="script.js"></script>
+<a href="https://substack.com/@kanmidamilola" target="_blank">
+Read my writing on Substack
+</a>
+
+</section>
+
+<section>
+<h2>How I Manage Projects</h2>
+
+<p><strong>1. Clarify the outcome</strong><br>Define scope, timeline, success metrics</p>
+<p><strong>2. Structure the work</strong><br>Break into deliverables</p>
+<p><strong>3. Align the team</strong><br>Communication and visibility</p>
+<p><strong>4. Maintain momentum</strong><br>Resolve blockers and manage dependencies</p>
+
+</section>
+
+<section id="contact">
+<h2>Let's connect</h2>
+
+<p>Open to IT Project Management Associate or Junior roles and Operations opportunities.</p>
+
+<a href="mailto:kanmidamilola@gmail.com">Email</a><br>
+<a href="https://www.linkedin.com/in/damilolaoyekanmi" target="_blank">LinkedIn</a>
+
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+});
+
+sections.forEach(section=>{
+observer.observe(section);
+});
+</script>
 
 </body>
 </html>
