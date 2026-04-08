@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Damilola Oyekanmi — Operations & IT Project Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:       #0f0e0d;
+      --paper:     #f5f2ec;
+      --warm:      #c8b49a;
+      --accent:    #2d5a4b;
+      --accent2:   #8b3a2f;
+      --mid:       #6b6560;
+      --line:      rgba(15,14,13,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 4rem;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 6rem 4rem;
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+    .hero-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.8rem;
+    }
+    .hero-name span { color: var(--accent2); }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 420px;
+      line-height: 1.8;
+      margin-bottom: 2.8rem;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+      width: fit-content;
+    }
+    .hero-cta:hover { background: var(--ink); transform: translateY(-2px); }
+    .hero-cta svg { width: 14px; height: 14px; }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 4rem;
+      background: var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right::before {
+      content: 'DO';
+      position: absolute;
+      top: -0.1em;
+      right: -0.05em;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .stat {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 1.6rem;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .hero-tagline {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+      padding: 1.5rem;
+      border-left: 2px solid rgba(255,255,255,0.4);
+      font-style: italic;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 7rem 4rem; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 4rem;
+    }
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--warm);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+      margin-left: 1rem;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 7rem 4rem;
+    }
+    #about .section-title { color: var(--paper); }
+    #about .section-num { color: var(--warm); }
+    #about .section-line { background: rgba(245,242,236,0.15); }
+    .about-body p {
+      color: rgba(245,242,236,0.75);
+      font-size: 1rem;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+    .about-body p strong { color: var(--paper); font-weight: 500; }
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2.5rem;
+    }
+    .pill {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(245,242,236,0.25);
+      padding: 0.4rem 1rem;
+      color: rgba(245,242,236,0.7);
+    }
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 500;
+      color: var(--paper);
+      line-height: 1.5;
+      font-style: italic;
+      border-left: 3px solid var(--accent2);
+      padding-left: 2rem;
+      margin-bottom: 3rem;
+    }
+    .core-skills { list-style: none; }
+    .core-skills li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(245,242,236,0.1);
+      font-size: 0.9rem;
+      color: rgba(245,242,236,0.75);
+    }
+    .core-skills li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--warm);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--paper); }
+    .exp-grid { display: grid; gap: 2rem; }
+    .exp-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      padding: 2.8rem 0;
+      border-bottom: 1px solid var(--line);
+      animation: fadeUp 0.6s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .exp-meta { padding-top: 0.25rem; }
+    .exp-date {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .exp-company {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    .exp-type {
+      font-size: 0.75rem;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+    }
+    .exp-content {}
+    .exp-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+    .exp-summary {
+      font-size: 0.93rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.6rem;
+    }
+    .exp-highlights { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .exp-highlights li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      font-size: 0.88rem;
+      color: #3a3633;
+      line-height: 1.7;
+    }
+    .exp-highlights li::before {
+      content: '→';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+    .exp-win {
+      margin-top: 1.5rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 1rem 1.4rem;
+      font-size: 0.83rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .exp-win strong { font-weight: 500; }
+
+    /* ── PROJECTS ── */
+    #projects { background: #1a1916; padding: 7rem 4rem; }
+    #projects .section-title { color: var(--paper); }
+    #projects .section-num { color: var(--warm); }
+    #projects .section-line { background: rgba(245,242,236,0.1); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .project-card {
+      border: 1px solid rgba(245,242,236,0.1);
+      padding: 2.5rem;
+      transition: border-color 0.3s, transform 0.3s;
+      cursor: default;
+    }
+    .project-card:hover {
+      border-color: var(--warm);
+      transform: translateY(-4px);
+    }
+    .project-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 1rem;
+    }
+    .project-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--paper);
+      margin-bottom: 0.9rem;
+      line-height: 1.15;
+    }
+    .project-desc {
+      font-size: 0.88rem;
+      color: rgba(245,242,236,0.6);
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+    }
+    .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .project-bullets li {
+      font-size: 0.83rem;
+      color: rgba(245,242,236,0.5);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      line-height: 1.65;
+    }
+    .project-bullets li::before {
+      content: '·';
+      color: var(--warm);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+    .project-footer {
+      margin-top: 1.8rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(245,242,236,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tool-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245,242,236,0.4);
+      border: 1px solid rgba(245,242,236,0.12);
+      padding: 0.3rem 0.75rem;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--paper); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .skill-block {
+      padding: 2rem;
+      border: 1px solid var(--line);
+    }
+    .skill-block-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .skill-list li {
+      font-size: 0.85rem;
+      color: var(--mid);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .skill-list li::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--warm);
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--accent2);
+      color: var(--paper);
+      text-align: center;
+      padding: 6rem 4rem;
+    }
+    #contact .section-title { color: var(--paper); font-size: clamp(2.2rem, 4vw, 3.5rem); }
+    .contact-sub {
+      color: rgba(245,242,236,0.75);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 1.2rem auto 3rem;
+      line-height: 1.8;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2rem;
+      border: 1px solid rgba(245,242,236,0.4);
+      color: var(--paper);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .contact-link:hover { background: rgba(245,242,236,0.15); border-color: rgba(245,242,236,0.7); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(245,242,236,0.4);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 5rem 1.5rem 3rem; border-right: none; border-bottom: 1px solid var(--line); }
+      .hero-right { padding: 3rem 1.5rem; min-height: 60vh; }
+      #about { grid-template-columns: 1fr; padding: 5rem 1.5rem; }
+      section { padding: 5rem 1.5rem; }
+      #projects { padding: 5rem 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .exp-card { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-name" href="#">Damilola Oyekanmi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-tag">Operations &amp; IT Project Manager</div>
+    <h1 class="hero-name">Damilola<br/><span>Oyekanmi</span></h1>
+    <p class="hero-desc">
+      I build systems, lead teams, and manage end-to-end delivery — from operational foundations to live technology products. My work sits at the intersection of people, process, and delivery.
+    </p>
+    <a href="#contact" class="hero-cta">
+      Let's work together
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <p class="hero-tagline">
+      "Operations experience gives me something most IT PMs don't have — I understand the real-world impact of every project I manage."
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">2+</div>
+        <div class="stat-label">Years in Operations &amp; PM</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Cross-functional team members led</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Reduction in project delays</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Live products managed end-to-end</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Who I am</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-body">
+      <p>
+        I'm an <strong>Operations and IT Project Manager</strong> who has spent the last few years building things that actually work — not just on paper, but in the day-to-day reality of fast-moving teams and real clients.
+      </p>
+      <p>
+        My career has moved from establishing operational foundations from scratch, to formally training in IT Project Management and stepping into a live product environment. That progression is intentional. <strong>Operations taught me what good execution looks like from the inside</strong>, and PM training gave me the framework to lead it at scale.
+      </p>
+      <p>
+        I operate closely with decision-makers, build systems that reduce friction, and keep delivery momentum even when things get complicated. I bring discipline, strong judgment, and a people-first approach to every layer of the work.
+      </p>
+      <div class="about-pills">
+        <span class="pill">Stakeholder Management</span>
+        <span class="pill">Agile &amp; Waterfall</span>
+        <span class="pill">Cross-functional Delivery</span>
+        <span class="pill">Risk Management</span>
+        <span class="pill">SOP Development</span>
+        <span class="pill">Client Relations</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-right">
+    <p class="about-quote">
+      "I don't just manage projects — I build the systems underneath them so they run well long after I've handed them off."
+    </p>
+    <ul class="core-skills">
+      <li>Stakeholder &amp; Client Communication</li>
+      <li>Project Execution &amp; Delivery</li>
+      <li>Operational Problem Solving</li>
+      <li>Cross-functional Team Coordination</li>
+      <li>Risk Identification &amp; Resolution</li>
+      <li>SOP Creation &amp; Process Design</li>
+      <li>Notion · Trello · Jira · Google Workspace</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-grid">
+
+    <!-- Stanix -->
+    <div class="exp-card">
+      <div class="exp-meta">
+        <div class="exp-date">Nov 2025 — Mar 2026</div>
+        <div class="exp-company">Stanix Consulting</div>
+        <div class="exp-type">IT Project Management</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">IT Project Manager</h3>
+        <p class="exp-summary">
+          Lead project manager on IrokoEV — a live electric vehicle platform currently in active development. Served as the primary coordination and communication hub for a 20-member cross-functional team across engineering, design, QA, and product management.
+        </p>
+        <ul class="exp-highlights">
+          <li>Served as Class Governor for a cohort of 15 Project Managers, acting as the primary communication bridge between the PM team and program leadership across time zones.</li>
+          <li>Managed dependencies, resolved blockers, and maintained stakeholder visibility across a hybrid Waterfall and Agile environment throughout the full product development lifecycle.</li>
+          <li>Coordinated sprint deliverables and end-to-end communication across a 20-member team toward a live product launch.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sozo -->
+    <div class="exp-card">
+      <div class="exp-meta">
+        <div class="exp-date">Jun 2025 — Present</div>
+        <div class="exp-company">Sozo Studio</div>
+        <div class="exp-type">Operations &amp; Project Management</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Programs &amp; Project Lead</h3>
+        <p class="exp-summary">
+          Operational and project lead managing end-to-end delivery of marketing projects for multiple clients. Built the operational foundation of the studio from the ground up — including onboarding processes, SOPs, and delivery frameworks.
+        </p>
+        <ul class="exp-highlights">
+          <li>Established the client and staff onboarding process from inception, defining workflows and setting the operational standards the team currently runs on.</li>
+          <li>Served as primary point of contact for clients throughout project delivery, managing expectations and resolving escalations promptly.</li>
+          <li>Continuously developed and updated SOPs to standardise recurring processes and maintain consistent execution frameworks as operations evolved.</li>
+          <li>Coordinated cross-functional teams, assigned responsibilities, monitored timelines, and proactively resolved blockers to sustain delivery momentum.</li>
+        </ul>
+        <div class="exp-win">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <strong>Impact:</strong>&nbsp;Reduced project delays by approximately 30% through proactive stakeholder communication and consistent follow-through.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Key Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">IT Project Management · Live Product</div>
+      <h3 class="project-title">IrokoEV Platform</h3>
+      <p class="project-desc">
+        An active electric vehicle platform currently in development. I served as lead PM and primary communication coordinator across the entire cross-functional team from design through to launch-readiness.
+      </p>
+      <ul class="project-bullets">
+        <li>Managed a 20-member team across engineering, design, QA, and product in a hybrid Agile/Waterfall environment.</li>
+        <li>Maintained stakeholder visibility across all workstreams and kept delivery momentum through dependency mapping and proactive blocker resolution.</li>
+        <li>Coordinated sprint planning, deliverable tracking, and cross-timezone communication for a diverse distributed team.</li>
+      </ul>
+      <div class="project-footer">
+        <span class="tool-tag">Jira</span>
+        <span class="tool-tag">Agile</span>
+        <span class="tool-tag">Waterfall</span>
+        <span class="tool-tag">Stakeholder Comms</span>
+        <span class="tool-tag">Sprint Management</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Operations · System Design</div>
+      <h3 class="project-title">Sozo Studio — Operations Build</h3>
+      <p class="project-desc">
+        Built the operational infrastructure of a growing studio from scratch — covering client onboarding, staff onboarding, delivery workflows, and SOP documentation. This was not inherited — it was created.
+      </p>
+      <ul class="project-bullets">
+        <li>Designed and implemented the end-to-end onboarding experience for both clients and staff, creating repeatable frameworks that reduced ramp-up time.</li>
+        <li>Created a living SOP library that standardised recurring processes across the team and maintained consistency as the studio scaled.</li>
+        <li>Achieved a ~30% reduction in project delays by strengthening communication protocols and delivery accountability.</li>
+      </ul>
+      <div class="project-footer">
+        <span class="tool-tag">Notion</span>
+        <span class="tool-tag">Trello</span>
+        <span class="tool-tag">Google Workspace</span>
+        <span class="tool-tag">SOP Design</span>
+        <span class="tool-tag">Process Mapping</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <h4 class="skill-block-title">Project Management</h4>
+      <ul class="skill-list">
+        <li>Agile &amp; Scrum Methodology</li>
+        <li>Waterfall Project Delivery</li>
+        <li>Sprint Planning &amp; Tracking</li>
+        <li>Risk Identification &amp; Mitigation</li>
+        <li>Dependency Management</li>
+        <li>Product Lifecycle Management</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <h4 class="skill-block-title">Operations</h4>
+      <ul class="skill-list">
+        <li>SOP Development &amp; Documentation</li>
+        <li>Process Design &amp; Optimisation</li>
+        <li>Workflow Mapping</li>
+        <li>Team Onboarding Systems</li>
+        <li>Cross-functional Coordination</li>
+        <li>Operational Problem Solving</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <h4 class="skill-block-title">Communication &amp; Tools</h4>
+      <ul class="skill-list">
+        <li>Stakeholder &amp; Client Management</li>
+        <li>Executive-level Communication</li>
+        <li>Escalation Handling</li>
+        <li>Jira · Notion · Trello</li>
+        <li>Google Workspace</li>
+        <li>Cross-timezone Collaboration</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Let's connect</h2>
+  <p class="contact-sub">
+    Open to IT PM Associate/Junior roles and Operations Management opportunities. If you're building something that needs operational rigour and delivery focus, let's talk.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:kanmidamilola@gmail.com" class="contact-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+      Email me
+    </a>
+    <a href="https://linkedin.com" class="contact-link" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Damilola Oyekanmi · Operations &amp; IT Project Manager
+</footer>
+
+</body>
+</html>
