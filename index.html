@@ -8,18 +8,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
---obsidian: #0d0f0e;
---obsidian-mid: #161a18;
---obsidian-soft: #1e2421;
---moss: #4a7c59;
---moss-light: #6aaa7a;
---moss-pale: #a8c9b0;
---cream: #f4f1ea;
---cream-soft: #ede9e0;
---ink: #18201e;
---mid: #6b7570;
---line-dark: rgba(255,255,255,0.07);
---line-light: rgba(0,0,0,0.08);
+  --obsidian: #0d0f0e;
+  --obsidian-mid: #161a18;
+  --obsidian-soft: #1e2421;
+  --moss: #4a7c59;
+  --moss-light: #6aaa7a;
+  --moss-pale: #a8c9b0;
+  --cream: #f4f1ea;
+  --cream-soft: #ede9e0;
+  --ink: #18201e;
+  --mid: #6b7570;
+  --line-dark: rgba(255,255,255,0.07);
+  --line-light: rgba(0,0,0,0.08);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -30,37 +30,37 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
 .nav-links a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,241,234,0.42); text-decoration: none; transition: color 0.2s; white-space: nowrap; font-weight: 400; }
 .nav-links a:hover { color: var(–moss-pale); }
-.nav-resume { background: var(--moss) !important; color: var(–cream) !important; padding: 0.4rem 1.1rem; font-weight: 500 !important; transition: background 0.2s !important; letter-spacing: 0.08em !important; }
+.nav-resume { background: var(–moss) !important; color: var(–cream) !important; padding: 0.4rem 1.1rem; font-weight: 500 !important; transition: background 0.2s !important; letter-spacing: 0.08em !important; }
 .nav-resume:hover { background: var(–moss-light) !important; }
 .nav-mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .nav-mobile-toggle span { display: block; width: 22px; height: 1.5px; background: var(–cream); transition: 0.3s; }
 .nav-mobile-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-mobile-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-.mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: var(--obsidian); border-bottom: 1px solid var(–line-dark); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 0.8rem; }
+.mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: var(–obsidian); border-bottom: 1px solid var(–line-dark); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 0.8rem; }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,241,234,0.5); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(–line-dark); }
 .mobile-menu a:last-child { color: var(–moss-pale); border-bottom: none; }
 
 .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 62px; }
-.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5.5rem 4.5rem 5.5rem 4rem; background: var(--obsidian); position: relative; overflow: hidden; }
-.hero-left::after { content: ‘’; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--moss), transparent); opacity: 0.3; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5.5rem 4.5rem 5.5rem 4rem; background: var(–obsidian); position: relative; overflow: hidden; }
+.hero-left::after { content: ‘’; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(–moss), transparent); opacity: 0.3; }
 .hero-glow { position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(74,124,89,0.12) 0%, transparent 65%); pointer-events: none; }
-.hero-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: top center; margin-bottom: 2rem; border: 1.5px solid var(--moss); position: relative; z-index: 1; }
-.hero-photo-fallback { width: 72px; height: 72px; border-radius: 50%; background: rgba(74,124,89,0.15); border: 1.5px solid var(--moss); display: none; align-items: center; justify-content: center; font-family: ‘Fraunces’, serif; font-size: 1.3rem; font-weight: 600; color: var(–moss-pale); margin-bottom: 2rem; position: relative; z-index: 1; }
+.hero-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: top center; margin-bottom: 2rem; border: 1.5px solid var(–moss); position: relative; z-index: 1; }
+.hero-photo-fallback { width: 72px; height: 72px; border-radius: 50%; background: rgba(74,124,89,0.15); border: 1.5px solid var(–moss); display: none; align-items: center; justify-content: center; font-family: ‘Fraunces’, serif; font-size: 1.3rem; font-weight: 600; color: var(–moss-pale); margin-bottom: 2rem; position: relative; z-index: 1; }
 .hero-tag { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(–moss-pale); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem; position: relative; z-index: 1; font-weight: 400; }
-.hero-tag::before { content: ‘’; width: 18px; height: 1px; background: var(--moss); }
+.hero-tag::before { content: ‘’; width: 18px; height: 1px; background: var(–moss); }
 .hero-name { font-family: ‘Fraunces’, serif; font-size: clamp(3rem, 5.2vw, 5rem); font-weight: 600; color: var(–cream); line-height: 1.03; margin-bottom: 1.6rem; position: relative; z-index: 1; letter-spacing: -0.01em; }
-.hero-name span { color: var(--moss-light); font-style: normal; font-weight: 600; }
+.hero-name span { color: var(–moss-light); font-style: normal; font-weight: 600; }
 .hero-desc { font-size: 0.96rem; color: rgba(244,241,234,0.52); max-width: 400px; line-height: 1.85; margin-bottom: 2.5rem; position: relative; z-index: 1; }
-.hero-cta { display: inline-flex; align-items: center; gap: 0.9rem; background: var(--moss); color: var(–cream); padding: 0.9rem 2rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; text-decoration: none; transition: background 0.25s, transform 0.2s; width: fit-content; position: relative; z-index: 1; }
+.hero-cta { display: inline-flex; align-items: center; gap: 0.9rem; background: var(–moss); color: var(–cream); padding: 0.9rem 2rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; text-decoration: none; transition: background 0.25s, transform 0.2s; width: fit-content; position: relative; z-index: 1; }
 .hero-cta:hover { background: var(–moss-light); transform: translateY(-2px); }
 .hero-cta svg { width: 13px; height: 13px; }
-.hero-right { display: flex; flex-direction: column; justify-content: flex-end; padding: 4.5rem; background: var(--obsidian-mid); position: relative; overflow: hidden; }
+.hero-right { display: flex; flex-direction: column; justify-content: flex-end; padding: 4.5rem; background: var(–obsidian-mid); position: relative; overflow: hidden; }
 .hero-right::before { content: ‘DO’; position: absolute; top: -0.08em; right: -0.04em; font-family: ‘Fraunces’, serif; font-size: 20rem; font-weight: 700; color: rgba(74,124,89,0.04); line-height: 1; pointer-events: none; }
-.hero-tagline { color: rgba(244,241,234,0.72); font-size: 0.95rem; line-height: 1.78; margin-bottom: 2.8rem; position: relative; z-index: 1; padding: 1.4rem 1.8rem; border-left: 2px solid var(--moss); background: rgba(74,124,89,0.06); font-family: ‘Fraunces’, serif; font-style: italic; font-weight: 300; }
+.hero-tagline { color: rgba(244,241,234,0.72); font-size: 0.95rem; line-height: 1.78; margin-bottom: 2.8rem; position: relative; z-index: 1; padding: 1.4rem 1.8rem; border-left: 2px solid var(–moss); background: rgba(74,124,89,0.06); font-family: ‘Fraunces’, serif; font-style: italic; font-weight: 300; }
 .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; position: relative; z-index: 1; background: var(–line-dark); }
-.stat { background: var(--obsidian-mid); padding: 1.6rem 1.4rem; }
+.stat { background: var(–obsidian-mid); padding: 1.6rem 1.4rem; }
 .stat-num { font-family: ‘Fraunces’, serif; font-size: 2.6rem; font-weight: 600; color: var(–moss-light); line-height: 1; margin-bottom: 0.4rem; }
 .stat-label { font-size: 0.65rem; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(244,241,234,0.35); line-height: 1.5; }
 
@@ -73,11 +73,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 
 section { padding: 7rem 4rem; }
 .section-header { display: flex; align-items: baseline; gap: 1.2rem; margin-bottom: 4rem; }
-.section-num { font-family: ‘Fraunces’, serif; font-size: 0.82rem; color: var(--moss); font-weight: 300; font-style: italic; }
+.section-num { font-family: ‘Fraunces’, serif; font-size: 0.82rem; color: var(–moss); font-weight: 300; font-style: italic; }
 .section-title { font-family: ‘Fraunces’, serif; font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 600; line-height: 1.1; }
 .section-line { flex: 1; height: 1px; background: var(–line-light); margin-left: 1.2rem; }
 
-#about { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; background: var(--obsidian); color: var(–cream); padding: 7rem 4rem; }
+#about { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; background: var(–obsidian); color: var(–cream); padding: 7rem 4rem; }
 #about .section-title { color: var(–cream); }
 #about .section-num { color: var(–moss-pale); }
 #about .section-line { background: var(–line-dark); }
@@ -150,7 +150,7 @@ section { padding: 7rem 4rem; }
 #samples { background: var(–cream); }
 .samples-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 .sample-card { padding: 2rem; background: var(–cream-soft); border-bottom: 2px solid var(–line-light); display: flex; flex-direction: column; gap: 0.8rem; transition: border-bottom-color 0.3s; }
-.sample-card:hover { border-bottom-color: var(--moss); }
+.sample-card:hover { border-bottom-color: var(–moss); }
 .sample-icon { font-size: 1.3rem; }
 .sample-title { font-family: ‘Fraunces’, serif; font-size: 1.05rem; font-weight: 600; color: var(–ink); }
 .sample-desc { font-size: 0.81rem; color: var(–mid); line-height: 1.65; flex: 1; }
@@ -164,7 +164,7 @@ section { padding: 7rem 4rem; }
 
 #tools { background: var(–obsidian-soft); padding: 7rem 4rem; }
 #tools .section-title { color: var(–cream); }
-#tools .section-num { color: var(--moss-pale); }
+#tools .section-num { color: var(–moss-pale); }
 #tools .section-line { background: var(–line-dark); }
 .tools-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(–line-dark); }
 .tool-card { background: var(–obsidian-soft); padding: 2rem; transition: background 0.25s; }
@@ -201,7 +201,7 @@ section { padding: 7rem 4rem; }
 .contact-link { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.8rem; border: 1px solid rgba(244,241,234,0.15); color: rgba(244,241,234,0.7); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; transition: all 0.25s; }
 .contact-link:hover { border-color: var(–moss); color: var(–cream); }
 .contact-link-primary { background: var(–moss); color: var(–cream) !important; border-color: var(–moss) !important; font-weight: 500; }
-.contact-link-primary:hover { background: var(--moss-light) !important; border-color: var(--moss-light) !important; }
+.contact-link-primary:hover { background: var(–moss-light) !important; border-color: var(–moss-light) !important; }
 .contact-link-outline { border-color: var(–moss) !important; color: rgba(244,241,234,0.85) !important; }
 .contact-link-outline:hover { background: rgba(74,124,89,0.15) !important; color: var(–cream) !important; }
 
@@ -225,361 +225,351 @@ section { padding: 5rem 1.5rem; }
 <body>
 
 <nav>
-<a class="nav-name" href="#">Damilola Oyekanmi</a>
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#process">Approach</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#samples">Work Samples</a></li>
-<li><a href="#insights">Insights</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a></li>
-</ul>
-<button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobile()" aria-label="Menu">
-<span></span><span></span><span></span>
-</button>
+  <a class="nav-name" href="#">Damilola Oyekanmi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Approach</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#samples">Work Samples</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-<a href="#about" onclick="closeMobile()">About</a>
-<a href="#process" onclick="closeMobile()">Approach</a>
-<a href="#experience" onclick="closeMobile()">Experience</a>
-<a href="#projects" onclick="closeMobile()">Projects</a>
-<a href="#samples" onclick="closeMobile()">Work Samples</a>
-<a href="#insights" onclick="closeMobile()">Insights</a>
-<a href="#contact" onclick="closeMobile()">Contact</a>
-<a href="resume.pdf" target="_blank" rel="noopener" onclick="closeMobile()">Download Resume</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#process" onclick="closeMobile()">Approach</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#samples" onclick="closeMobile()">Work Samples</a>
+  <a href="#insights" onclick="closeMobile()">Insights</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="resume.pdf" target="_blank" rel="noopener" onclick="closeMobile()">Download Resume</a>
 </div>
 
 <section class="hero" id="home">
-<div class="hero-left">
-<div class="hero-glow"></div>
-<img src="myphoto.jpg" alt="Damilola Oyekanmi" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-<div class="hero-photo-fallback">DO</div>
-<div class="hero-tag">IT Project Associate / Operations Manager</div>
-<h1 class="hero-name">Damilola<br/><span>Oyekanmi</span></h1>
-<p class="hero-desc">I build the systems that keep teams aligned and projects moving, from operational foundations to the delivery of live technology products.</p>
-<a href="#contact" class="hero-cta">
-Let's work together
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-</a>
-</div>
-<div class="hero-right">
-<p class="hero-tagline">"When you hire me as your project manager, you're not just getting someone to tick off checklists. You're gaining a system that keeps your team aligned and frees you from operational overwhelm."</p>
-<div class="hero-stats">
-<div class="stat"><div class="stat-num" data-target="2" data-suffix="+">0+</div><div class="stat-label">Years in Operations &amp; Project Management</div></div>
-<div class="stat"><div class="stat-num" data-target="20" data-suffix="+">0+</div><div class="stat-label">Cross-functional team members led</div></div>
-<div class="stat"><div class="stat-num" data-target="30" data-suffix="%">0%</div><div class="stat-label">Reduction in project delays</div></div>
-<div class="stat"><div class="stat-num">Multiple</div><div class="stat-label">Projects delivered across agency and product teams</div></div>
-</div>
-</div>
+  <div class="hero-left">
+    <div class="hero-glow"></div>
+    <img src="myphoto.jpg" alt="Damilola Oyekanmi" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+    <div class="hero-photo-fallback">DO</div>
+    <div class="hero-tag">IT Project Associate | Operations Manager</div>
+    <h1 class="hero-name">Damilola<br/><span>Oyekanmi</span></h1>
+    <p class="hero-desc">I build the systems that keep teams aligned and projects moving, from operational foundations to the delivery of live technology products.</p>
+    <a href="#contact" class="hero-cta">
+      Let's work together
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <p class="hero-tagline">When you hire me as your project manager, you're not just getting someone to tick off checklists. You're gaining a system that keeps your team aligned and frees you from operational overwhelm.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num" data-target="2" data-suffix="+">0+</div><div class="stat-label">Years in Operations &amp; Project Management</div></div>
+      <div class="stat"><div class="stat-num" data-target="20" data-suffix="+">0+</div><div class="stat-label">Cross-functional team members led</div></div>
+      <div class="stat"><div class="stat-num" data-target="30" data-suffix="%">0%</div><div class="stat-label">Reduction in project delays</div></div>
+      <div class="stat"><div class="stat-num">Multiple</div><div class="stat-label">Projects delivered across agency and product teams</div></div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-<div class="reveal">
-<div class="section-header">
-<span class="section-num">01</span><h2 class="section-title">Who I am</h2><div class="section-line"></div>
-</div>
-<div class="about-body">
-<p>I'm an <strong>Operations and IT Project Manager</strong> who has spent the last few years building systems and delivering outcomes that actually work, not just on paper, but in the day-to-day reality of fast-moving teams.</p>
-<p>My career has moved from establishing operational foundations from scratch to formally training in IT Project Management, where I stepped into a live product environment and led delivery from the ground up. <strong>Operations taught me what good execution looks like from the inside.</strong> <strong>Project Management gave me the framework to lead it at scale.</strong></p>
-<p>I work closely with decision-makers, build systems that reduce friction, and keep delivery momentum even when things get complicated. I bring discipline, strong judgment, and a people-first approach to every layer of the work.</p>
-<div class="about-pills">
-<span class="pill">Stakeholder Management</span>
-<span class="pill">Agile &amp; Waterfall</span>
-<span class="pill">Cross-functional Delivery</span>
-<span class="pill">Risk Management</span>
-<span class="pill">SOP Development</span>
-<span class="pill">Client Relations</span>
-</div>
-</div>
-</div>
-<div class="about-right reveal reveal-delay-2">
-<p class="about-quote">"Every team reaches a point where the work is bigger than the informal systems holding it together. A project manager is how you close that gap."</p>
-<ul class="core-skills">
-<li>Stakeholder &amp; Client Communication</li>
-<li>Project Execution &amp; Delivery</li>
-<li>Operational Problem Solving</li>
-<li>Cross-functional Team Coordination</li>
-<li>Risk Identification &amp; Resolution</li>
-<li>SOP Creation &amp; Process Design</li>
-<li>Notion &middot; Trello &middot; Jira &middot; Google Workspace</li>
-</ul>
-</div>
+  <div class="reveal">
+    <div class="section-header">
+      <span class="section-num">01</span><h2 class="section-title">Who I am</h2><div class="section-line"></div>
+    </div>
+    <div class="about-body">
+      <p>I'm an <strong>Operations and IT Project Manager</strong> who has spent the last few years building systems and delivering outcomes that actually work, not just on paper, but in the day-to-day reality of fast-moving teams.</p>
+      <p>My career has moved from establishing operational foundations from scratch to formally training in IT Project Management, where I stepped into a live product environment and led delivery from the ground up. <strong>Operations taught me what good execution looks like from the inside.</strong> <strong>Project Management gave me the framework to lead it at scale.</strong></p>
+      <p>I work closely with decision-makers, build systems that reduce friction, and keep delivery momentum even when things get complicated. I bring discipline, strong judgment, and a people-first approach to every layer of the work.</p>
+      <div class="about-pills">
+        <span class="pill">Stakeholder Management</span>
+        <span class="pill">Agile &amp; Waterfall</span>
+        <span class="pill">Cross-functional Delivery</span>
+        <span class="pill">Risk Management</span>
+        <span class="pill">SOP Development</span>
+        <span class="pill">Client Relations</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-right reveal reveal-delay-2">
+    <p class="about-quote">"Every team reaches a point where the work is bigger than the informal systems holding it together. A project manager is how you close that gap."</p>
+    <ul class="core-skills">
+      <li>Stakeholder &amp; Client Communication</li>
+      <li>Project Execution &amp; Delivery</li>
+      <li>Operational Problem Solving</li>
+      <li>Cross-functional Team Coordination</li>
+      <li>Risk Identification &amp; Resolution</li>
+      <li>SOP Creation &amp; Process Design</li>
+      <li>Notion &middot; Trello &middot; Jira &middot; Google Workspace</li>
+    </ul>
+  </div>
 </section>
 
 <section id="process">
-<div class="section-header reveal"><span class="section-num">02</span><h2 class="section-title">How I Manage Projects</h2><div class="section-line"></div></div>
-<div class="process-grid">
-<div class="process-card reveal reveal-delay-1"><div class="process-step">01</div><h3 class="process-title">Clarify the Outcome</h3><p class="process-desc">Define scope, timeline, and success metrics before a single task is assigned. Ambiguity at the start becomes a crisis at the end.</p></div>
-<div class="process-card reveal reveal-delay-2"><div class="process-step">02</div><h3 class="process-title">Structure the Work</h3><p class="process-desc">Break projects into clear deliverables and assign ownership. Everyone should know what they own and when it's due.</p></div>
-<div class="process-card reveal reveal-delay-3"><div class="process-step">03</div><h3 class="process-title">Align the Team</h3><p class="process-desc">Establish communication cadence and shared visibility. A team that knows what's happening doesn't need to be chased.</p></div>
-<div class="process-card reveal reveal-delay-4"><div class="process-step">04</div><h3 class="process-title">Maintain Momentum</h3><p class="process-desc">Resolve blockers, manage dependencies, and keep stakeholders informed. Delivery momentum is protected, not assumed.</p></div>
-</div>
+  <div class="section-header reveal"><span class="section-num">02</span><h2 class="section-title">How I Manage Projects</h2><div class="section-line"></div></div>
+  <div class="process-grid">
+    <div class="process-card reveal reveal-delay-1"><div class="process-step">01</div><h3 class="process-title">Clarify the Outcome</h3><p class="process-desc">Define scope, timeline, and success metrics before a single task is assigned. Ambiguity at the start becomes a crisis at the end.</p></div>
+    <div class="process-card reveal reveal-delay-2"><div class="process-step">02</div><h3 class="process-title">Structure the Work</h3><p class="process-desc">Break projects into clear deliverables and assign ownership. Everyone should know what they own and when it's due.</p></div>
+    <div class="process-card reveal reveal-delay-3"><div class="process-step">03</div><h3 class="process-title">Align the Team</h3><p class="process-desc">Establish communication cadence and shared visibility. A team that knows what's happening doesn't need to be chased.</p></div>
+    <div class="process-card reveal reveal-delay-4"><div class="process-step">04</div><h3 class="process-title">Maintain Momentum</h3><p class="process-desc">Resolve blockers, manage dependencies, and keep stakeholders informed. Delivery momentum is protected, not assumed.</p></div>
+  </div>
 </section>
 
 <section id="experience">
-<div class="section-header reveal"><span class="section-num">03</span><h2 class="section-title">Experience</h2><div class="section-line"></div></div>
-<div class="timeline">
-<div class="timeline-item">
-<div class="timeline-date">Nov 2025 &ndash; Mar 2026</div>
-<div class="timeline-company">Stanix Consulting</div>
-<div class="timeline-role">IT Project Manager</div>
-<div class="timeline-project">Project: IrokoEV &ndash; Electric Vehicle Platform</div>
-<ul class="timeline-bullets">
-<li>Coordinated a 20-member cross-functional team across engineering, design, QA, and product.</li>
-<li>Managed dependencies and sprint deliverables in a hybrid Waterfall + Agile environment.</li>
-<li>Maintained stakeholder visibility through structured communication and progress tracking.</li>
-</ul>
-</div>
-<div class="timeline-item">
-<div class="timeline-date">Aug 2024 &ndash; Present</div>
-<div class="timeline-company">Sozo Studio</div>
-<div class="timeline-role">Programs &amp; Project Lead</div>
-<ul class="timeline-bullets">
-<li>Built operational systems from inception, covering onboarding, SOPs, and delivery frameworks.</li>
-<li>Led end-to-end project delivery across multiple clients as primary point of contact.</li>
-<li>Coordinated cross-functional teams, assigned responsibilities, and resolved blockers proactively.</li>
-</ul>
-<div class="timeline-win">
-<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-<strong>Impact:</strong>&nbsp;Reduced project delays by approximately 30%.
-</div>
-</div>
-</div>
+  <div class="section-header reveal"><span class="section-num">03</span><h2 class="section-title">Experience</h2><div class="section-line"></div></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Nov 2025 &ndash; Mar 2026</div>
+      <div class="timeline-company">Stanix Consulting</div>
+      <div class="timeline-role">IT Project Manager</div>
+      <div class="timeline-project">Project: IrokoEV &ndash; Electric Vehicle Platform</div>
+      <ul class="timeline-bullets">
+        <li>Coordinated a 20-member cross-functional team across engineering, design, QA, and product.</li>
+        <li>Managed dependencies and sprint deliverables in a hybrid Waterfall + Agile environment.</li>
+        <li>Maintained stakeholder visibility through structured communication and progress tracking.</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Aug 2024 &ndash; Present</div>
+      <div class="timeline-company">Sozo Studio</div>
+      <div class="timeline-role">Programs &amp; Project Lead</div>
+      <ul class="timeline-bullets">
+        <li>Built operational systems from inception, covering onboarding, SOPs, and delivery frameworks.</li>
+        <li>Led end-to-end project delivery across multiple clients as primary point of contact.</li>
+        <li>Coordinated cross-functional teams, assigned responsibilities, and resolved blockers proactively.</li>
+      </ul>
+      <div class="timeline-win">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <strong>Impact:</strong>&nbsp;Reduced project delays by approximately 30%.
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-<div class="section-header reveal"><span class="section-num">04</span><h2 class="section-title">Key Projects</h2><div class="section-line"></div></div>
-<div class="projects-grid">
-<div class="project-card reveal reveal-delay-1">
-<div class="project-tag">IT Project Management &middot; Live Product</div>
-<h3 class="project-title">IrokoEV Platform</h3>
-<p class="project-desc">A completed electric vehicle platform. Led as Project Manager and primary communication coordinator across the full cross-functional team from design through to launch.</p>
-<ul class="project-bullets">
-<li>Managed a 20-member team across engineering, design, QA, and product in a hybrid Waterfall + Agile environment.</li>
-<li>Maintained stakeholder visibility across all workstreams through dependency mapping and proactive blocker resolution.</li>
-<li>Coordinated sprint planning, deliverable tracking, and cross-timezone communication for a distributed team.</li>
-</ul>
-<div class="project-actions">
-<a href="https://www.irokoev.com" target="_blank" rel="noopener" class="project-btn project-btn-primary">
-<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-View Product
-</a>
-<a class="project-btn project-btn-disabled">View Case Study</a>
-</div>
-<div class="project-footer">
-<span class="tool-tag">Jira</span>
-<span class="tool-tag">Waterfall + Agile</span>
-<span class="tool-tag">Stakeholder Comms</span>
-<span class="tool-tag">Sprint Management</span>
-</div>
-</div>
-<div class="project-card reveal reveal-delay-2">
-<div class="project-tag">Operations &middot; System Design</div>
-<h3 class="project-title">Sozo Studio Operations Build</h3>
-<p class="project-desc">Built the operational infrastructure of a growing studio from scratch, covering client onboarding, staff onboarding, delivery workflows, and SOP documentation.</p>
-<ul class="project-bullets">
-<li>Designed repeatable onboarding frameworks for both clients and staff, reducing ramp-up time.</li>
-<li>Created a living SOP library that maintained consistency as the studio scaled.</li>
-<li>Achieved a 30% reduction in project delays through strengthened communication and accountability.</li>
-</ul>
-<div class="project-actions">
-<a href="https://www.sozostudio.org" target="_blank" rel="noopener" class="project-btn project-btn-primary">
-<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-View Site
-</a>
-<a class="project-btn project-btn-disabled">View Operational Build</a>
-</div>
-<div class="project-footer">
-<span class="tool-tag">Notion</span>
-<span class="tool-tag">Trello</span>
-<span class="tool-tag">Google Workspace</span>
-<span class="tool-tag">SOP Design</span>
-<span class="tool-tag">Process Mapping</span>
-</div>
-</div>
-</div>
+  <div class="section-header reveal"><span class="section-num">04</span><h2 class="section-title">Key Projects</h2><div class="section-line"></div></div>
+  <div class="projects-grid">
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-tag">IT Project Management &middot; Live Product</div>
+      <h3 class="project-title">IrokoEV Platform</h3>
+      <p class="project-desc">Electric vehicle platform. Led as Project Manager and primary communication coordinator across the full cross-functional team from design through to launch.</p>
+      <ul class="project-bullets">
+        <li>Managed a 20-member team across engineering, design, QA, and product in a hybrid Waterfall + Agile environment.</li>
+        <li>Maintained stakeholder visibility across all workstreams through dependency mapping and proactive blocker resolution.</li>
+        <li>Coordinated sprint planning, deliverable tracking, and cross-timezone communication for a distributed team.</li>
+      </ul>
+      <div class="project-actions">
+        <a href="https://www.irokoev.com" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Product
+        </a>
+        <a class="project-btn project-btn-disabled">View Case Study</a>
+      </div>
+      <div class="project-footer">
+        <span class="tool-tag">Jira</span>
+        <span class="tool-tag">Waterfall + Agile</span>
+        <span class="tool-tag">Stakeholder Comms</span>
+        <span class="tool-tag">Sprint Management</span>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-2">
+      <div class="project-tag">Operations &middot; System Design</div>
+      <h3 class="project-title">Sozo Studio Operations Build</h3>
+      <p class="project-desc">Built the operational infrastructure of a growing studio from scratch, covering client onboarding, staff onboarding, delivery workflows, and SOP documentation.</p>
+      <ul class="project-bullets">
+        <li>Designed repeatable onboarding frameworks for both clients and staff, reducing ramp-up time.</li>
+        <li>Created a living SOP library that maintained consistency as the studio scaled.</li>
+        <li>Achieved a 30% reduction in project delays through strengthened communication and accountability.</li>
+      </ul>
+      <div class="project-actions">
+        <a href="https://www.sozostudio.org" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Site
+        </a>
+        <a class="project-btn project-btn-disabled">View Operational Build</a>
+      </div>
+      <div class="project-footer">
+        <span class="tool-tag">Notion</span>
+        <span class="tool-tag">Trello</span>
+        <span class="tool-tag">Google Workspace</span>
+        <span class="tool-tag">SOP Design</span>
+        <span class="tool-tag">Process Mapping</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="samples">
-<div class="section-header reveal"><span class="section-num">05</span><h2 class="section-title">Work Samples</h2><div class="section-line"></div></div>
-<div class="samples-grid">
-<div class="sample-card reveal reveal-delay-1">
-<div class="sample-icon">&#128203;</div>
-<div class="sample-title">Sprint Planning Template</div>
-<p class="sample-desc">A structured template for sprint kickoff, covering goals, backlog items, capacity, and team assignments.</p>
-<a class="sample-link">View &#8599;</a>
-</div>
-<div class="sample-card reveal reveal-delay-2">
-<div class="sample-icon">&#128202;</div>
-<div class="sample-title">Project Status Report</div>
-<p class="sample-desc">A stakeholder-facing progress report showing RAG status, milestones, risks, and next steps.</p>
-<a class="sample-link">View &#8599;</a>
-</div>
-<!--
-VIDEO SAMPLE
-When your video is ready:
-1. Upload to YouTube, Vimeo, Loom, or any public platform
-2. Copy the public URL
-3. Replace YOUR_VIDEO_URL_HERE with that URL
-4. Delete the words "coming-soon" from the class on the anchor tag below
-The button activates automatically. Nothing else changes.
--->
-<div class="sample-card reveal reveal-delay-3">
-<div class="sample-badge">Video walkthrough</div>
-<div class="sample-icon">&#127916;</div>
-<div class="sample-title">Onboarding Automation</div>
-<p class="sample-desc">A walkthrough of an automated onboarding system, covering triggers, workflows, and team handoffs.</p>
-<a href="YOUR_VIDEO_URL_HERE" target="_blank" rel="noopener" class="sample-link-video coming-soon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-Watch video &#8599;
-</a>
-</div>
-</div>
+  <div class="section-header reveal"><span class="section-num">05</span><h2 class="section-title">Work Samples</h2><div class="section-line"></div></div>
+  <div class="samples-grid">
+    <div class="sample-card reveal reveal-delay-1">
+      <div class="sample-icon">&#128203;</div>
+      <div class="sample-title">Sprint Planning Template</div>
+      <p class="sample-desc">A structured template for sprint kickoff, covering goals, backlog items, capacity, and team assignments.</p>
+      <a class="sample-link">View &#8599;</a>
+    </div>
+    <div class="sample-card reveal reveal-delay-2">
+      <div class="sample-icon">&#128202;</div>
+      <div class="sample-title">Project Status Report</div>
+      <p class="sample-desc">A stakeholder-facing progress report showing RAG status, milestones, risks, and next steps.</p>
+      <a class="sample-link">View &#8599;</a>
+    </div>
+    <div class="sample-card reveal reveal-delay-3">
+      <div class="sample-badge">Video walkthrough</div>
+      <div class="sample-icon">&#127916;</div>
+      <div class="sample-title">Onboarding Automation</div>
+      <p class="sample-desc">A walkthrough of an automated onboarding system, covering triggers, workflows, and team handoffs.</p>
+      <!-- When video is ready: replace YOUR_VIDEO_URL_HERE and remove "coming-soon" from the class -->
+      <a href="YOUR_VIDEO_URL_HERE" target="_blank" rel="noopener" class="sample-link-video coming-soon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Watch video &#8599;
+      </a>
+    </div>
+  </div>
 </section>
 
 <section id="tools">
-<div class="section-header reveal"><span class="section-num">06</span><h2 class="section-title">Tools</h2><div class="section-line"></div></div>
-<div class="tools-grid">
-<div class="tool-card reveal reveal-delay-1"><div class="tool-name">Jira</div><div class="tool-use">Sprint tracking and backlog management</div></div>
-<div class="tool-card reveal reveal-delay-2"><div class="tool-name">Notion</div><div class="tool-use">SOP documentation and internal workflow</div></div>
-<div class="tool-card reveal reveal-delay-3"><div class="tool-name">Trello</div><div class="tool-use">Operational task coordination</div></div>
-<div class="tool-card reveal reveal-delay-1"><div class="tool-name">Google Workspace</div><div class="tool-use">Cross-team communication and document management</div></div>
-<div class="tool-card reveal reveal-delay-2"><div class="tool-name">Agile / Scrum</div><div class="tool-use">Sprint ceremonies, retrospectives, and iterative delivery</div></div>
-<div class="tool-card reveal reveal-delay-3"><div class="tool-name">Waterfall</div><div class="tool-use">Structured phase-gate delivery for fixed-scope projects</div></div>
-</div>
+  <div class="section-header reveal"><span class="section-num">06</span><h2 class="section-title">Tools</h2><div class="section-line"></div></div>
+  <div class="tools-grid">
+    <div class="tool-card reveal reveal-delay-1"><div class="tool-name">Jira</div><div class="tool-use">Sprint tracking and backlog management</div></div>
+    <div class="tool-card reveal reveal-delay-2"><div class="tool-name">Notion</div><div class="tool-use">SOP documentation and internal workflow</div></div>
+    <div class="tool-card reveal reveal-delay-3"><div class="tool-name">Trello</div><div class="tool-use">Operational task coordination</div></div>
+    <div class="tool-card reveal reveal-delay-1"><div class="tool-name">Google Workspace</div><div class="tool-use">Cross-team communication and document management</div></div>
+    <div class="tool-card reveal reveal-delay-2"><div class="tool-name">Agile / Scrum</div><div class="tool-use">Sprint ceremonies, retrospectives, and iterative delivery</div></div>
+    <div class="tool-card reveal reveal-delay-3"><div class="tool-name">Waterfall</div><div class="tool-use">Structured phase-gate delivery for fixed-scope projects</div></div>
+  </div>
 </section>
 
 <section id="insights">
-<div class="section-header reveal"><span class="section-num">07</span><h2 class="section-title">Insights</h2><div class="section-line"></div></div>
-<div class="insights-grid">
-<a class="insight-card reveal reveal-delay-1" href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">
-<div class="insight-tag">Project Management</div>
-<div class="insight-title">Why Projects Fall Behind Before They Start</div>
-<p class="insight-preview">Delayed delivery rarely begins mid-project. It starts on day one when scope, ownership, and success criteria are not defined. Here is how to fix that upfront.</p>
-<div class="insight-cta">Read on Substack <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-</a>
-<a class="insight-card reveal reveal-delay-2" href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">
-<div class="insight-tag">Project Management</div>
-<div class="insight-title">What High-Impact PMs Do Differently</div>
-<p class="insight-preview">The most effective project managers are not reporting on progress. They are removing the friction that slows it down. The difference is strategic, not operational.</p>
-<div class="insight-cta">Read on Substack <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-</a>
-<a class="insight-card reveal reveal-delay-3" href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">
-<div class="insight-tag">Operations</div>
-<div class="insight-title">How to Build an Operation That Runs Without You</div>
-<p class="insight-preview">Resilient operations are built on documented systems, not individual heroics. The goal is not to be indispensable. It is to make the work indispensable to the team.</p>
-<div class="insight-cta">Read on Substack <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-</a>
-</div>
-<div class="insight-substack reveal">
-<a href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">View all writing on Substack &#8594;</a>
-</div>
+  <div class="section-header reveal"><span class="section-num">07</span><h2 class="section-title">Insights</h2><div class="section-line"></div></div>
+  <div class="insights-grid">
+    <a class="insight-card reveal reveal-delay-1" href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">
+      <div class="insight-tag">Project Management</div>
+      <div class="insight-title">Why Projects Fall Behind Before They Start</div>
+      <p class="insight-preview">Delayed delivery rarely begins mid-project. It starts on day one when scope, ownership, and success criteria are not defined. Here is how to fix that upfront.</p>
+      <div class="insight-cta">Read on Substack <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a class="insight-card reveal reveal-delay-2" href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">
+      <div class="insight-tag">Project Management</div>
+      <div class="insight-title">What High-Impact PMs Do Differently</div>
+      <p class="insight-preview">The most effective project managers are not reporting on progress. They are removing the friction that slows it down. The difference is strategic, not operational.</p>
+      <div class="insight-cta">Read on Substack <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a class="insight-card reveal reveal-delay-3" href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">
+      <div class="insight-tag">Digital Operations</div>
+      <div class="insight-title">How to Build an Operation That Runs Without You</div>
+      <p class="insight-preview">Resilient operations are built on documented systems, not individual heroics. The goal is not to be indispensable. It is to make the work indispensable to the team.</p>
+      <div class="insight-cta">Read on Substack <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+  </div>
+  <div class="insight-substack reveal">
+    <a href="https://substack.com/@kanmidamilola?r=1n5k97&utm_campaign=profile&utm_medium=profile-page&utm_source=direct" target="_blank" rel="noopener">View all writing on Substack &#8594;</a>
+  </div>
 </section>
 
 <section id="skills">
-<div class="section-header reveal"><span class="section-num">08</span><h2 class="section-title">Skills</h2><div class="section-line"></div></div>
-<div class="skills-grid">
-<div class="skill-block reveal reveal-delay-1">
-<h4 class="skill-block-title">Project Management</h4>
-<ul class="skill-list">
-<li>Agile &amp; Scrum Methodology</li>
-<li>Sprint Planning &amp; Tracking</li>
-<li>Risk Identification &amp; Mitigation</li>
-<li>Dependency Management</li>
-<li>Project Delivery &amp; Execution</li>
-</ul>
-</div>
-<div class="skill-block reveal reveal-delay-2">
-<h4 class="skill-block-title">Digital Operations</h4>
-<ul class="skill-list">
-<li>SOP Development &amp; Documentation</li>
-<li>Process Design &amp; Optimisation</li>
-<li>Workflow Mapping</li>
-<li>Team Onboarding Systems</li>
-<li>Cross-functional Coordination</li>
-<li>Operational Problem Solving</li>
-</ul>
-</div>
-<div class="skill-block reveal reveal-delay-3">
-<h4 class="skill-block-title">Communication &amp; Stakeholders</h4>
-<ul class="skill-list">
-<li>Stakeholder &amp; Client Management</li>
-<li>Executive-level Communication</li>
-<li>Escalation Handling</li>
-<li>Cross-timezone Collaboration</li>
-<li>Progress Reporting</li>
-<li>Expectation Management</li>
-</ul>
-</div>
-</div>
+  <div class="section-header reveal"><span class="section-num">08</span><h2 class="section-title">Skills</h2><div class="section-line"></div></div>
+  <div class="skills-grid">
+    <div class="skill-block reveal reveal-delay-1">
+      <h4 class="skill-block-title">Project Management</h4>
+      <ul class="skill-list">
+        <li>Agile &amp; Scrum Methodology</li>
+        <li>Sprint Planning &amp; Tracking</li>
+        <li>Risk Identification &amp; Mitigation</li>
+        <li>Dependency Management</li>
+        <li>Project Delivery &amp; Execution</li>
+      </ul>
+    </div>
+    <div class="skill-block reveal reveal-delay-2">
+      <h4 class="skill-block-title">Digital Operations</h4>
+      <ul class="skill-list">
+        <li>SOP Development &amp; Documentation</li>
+        <li>Process Design &amp; Optimisation</li>
+        <li>Workflow Mapping</li>
+        <li>Team Onboarding Systems</li>
+        <li>Cross-functional Coordination</li>
+        <li>Operational Problem Solving</li>
+      </ul>
+    </div>
+    <div class="skill-block reveal reveal-delay-3">
+      <h4 class="skill-block-title">Communication &amp; Stakeholders</h4>
+      <ul class="skill-list">
+        <li>Stakeholder &amp; Client Management</li>
+        <li>Executive-level Communication</li>
+        <li>Escalation Handling</li>
+        <li>Cross-timezone Collaboration</li>
+        <li>Progress Reporting</li>
+        <li>Expectation Management</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
-<h2 class="section-title reveal">Let's connect</h2>
-<p class="contact-sub reveal">Open to IT Project Management Associate or Junior roles and Operations Management opportunities. If you're building something that needs operational rigour and delivery focus, let's talk.</p>
-<div class="contact-links reveal">
-<a href="mailto:kanmidamilola@gmail.com" class="contact-link contact-link-primary">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-Email me
-</a>
-<a href="https://www.linkedin.com/in/damilolaoyekanmi" class="contact-link contact-link-outline" target="_blank" rel="noopener">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-LinkedIn
-</a>
-<a href="resume.pdf" target="_blank" rel="noopener" class="contact-link contact-link-outline">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-Download Resume
-</a>
-</div>
+  <h2 class="section-title reveal">Let's connect</h2>
+  <p class="contact-sub reveal">I'm open to IT Project Management Associate or Junior roles and Operations Management opportunities. If you're building something that needs operational rigour and delivery focus, let's talk.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:kanmidamilola@gmail.com" class="contact-link contact-link-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+      Email me
+    </a>
+    <a href="https://www.linkedin.com/in/damilolaoyekanmi" class="contact-link contact-link-outline" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="resume.pdf" target="_blank" rel="noopener" class="contact-link contact-link-outline">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Resume
+    </a>
+  </div>
 </section>
 
 <footer>&copy; 2026 Damilola Oyekanmi &middot; IT Project Associate &amp; Operations Manager</footer>
 
 <script>
 function toggleMobile() {
-document.getElementById('mobileMenu').classList.toggle('open');
-document.getElementById('mobileToggle').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('mobileToggle').classList.toggle('open');
 }
 function closeMobile() {
-document.getElementById('mobileMenu').classList.remove('open');
-document.getElementById('mobileToggle').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mobileToggle').classList.remove('open');
 }
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-link.addEventListener('click', function(e) {
-var t = document.querySelector(this.getAttribute('href'));
-if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-});
+  link.addEventListener('click', function(e) {
+    var t = document.querySelector(this.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
 });
 var revealObs = new IntersectionObserver(function(entries) {
-entries.forEach(function(e) {
-if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-});
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal, .timeline-item').forEach(function(el) { revealObs.observe(el); });
 function animateCounter(el) {
-var target = parseInt(el.getAttribute('data-target'), 10);
-var suffix = el.getAttribute('data-suffix') || '';
-var steps = 50;
-var current = 0;
-var interval = Math.round(1400 / steps);
-var timer = setInterval(function() {
-current += Math.ceil(target / steps);
-if (current >= target) { current = target; clearInterval(timer); }
-el.textContent = current + suffix;
-}, interval);
+  var target = parseInt(el.getAttribute('data-target'), 10);
+  var suffix = el.getAttribute('data-suffix') || '';
+  var steps = 50;
+  var current = 0;
+  var interval = Math.round(1400 / steps);
+  var timer = setInterval(function() {
+    current += Math.ceil(target / steps);
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = current + suffix;
+  }, interval);
 }
 var counterObs = new IntersectionObserver(function(entries) {
-entries.forEach(function(e) {
-if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
-});
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+  });
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat-num[data-target]').forEach(function(el) { counterObs.observe(el); });
 </script>
 
 </body>
 </html>
-
-
