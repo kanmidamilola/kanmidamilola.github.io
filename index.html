@@ -513,7 +513,7 @@ section { padding: 5rem 1.5rem; }
   <h2 class="section-title reveal">Let's connect</h2>
   <p class="contact-sub reveal">I'm open to IT Project Management Associate or Junior roles and Operations Management opportunities. If you're building something that needs operational rigour and delivery focus, let's talk.</p>
   <div class="contact-links reveal">
-    <a href="mailto:kanmidamilola@gmail.com" class="contact-link contact-link-primary">
+    <a href="/cdn-cgi/l/email-protection#b6ddd7d8dbdfd2d7dbdfdad9dad7f6d1dbd7dfda98d5d9db" class="contact-link contact-link-primary">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
       Email me
     </a>
@@ -530,46 +530,41 @@ section { padding: 5rem 1.5rem; }
 
 <footer>&copy; 2026 Damilola Oyekanmi &middot; IT Project Associate &amp; Operations Manager</footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
 function toggleMobile() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-  document.getElementById('mobileToggle').classList.toggle('open');
+document.getElementById(‘mobileMenu’).classList.toggle(‘open’);
+document.getElementById(‘mobileToggle’).classList.toggle(‘open’);
 }
 function closeMobile() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  document.getElementById('mobileToggle').classList.remove('open');
+document.getElementById(‘mobileMenu’).classList.remove(‘open’);
+document.getElementById(‘mobileToggle’).classList.remove(‘open’);
 }
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    var t = document.querySelector(this.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
+document.querySelectorAll(‘a[href^=”#”]’).forEach(function(link) {
+link.addEventListener(‘click’, function(e) {
+var t = document.querySelector(this.getAttribute(‘href’));
+if (t) { e.preventDefault(); t.scrollIntoView({ behavior: ‘smooth’, block: ‘start’ }); }
+});
 });
 var revealObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-  });
+entries.forEach(function(e) {
+if (e.isIntersecting) { e.target.classList.add(‘visible’); revealObs.unobserve(e.target); }
+});
 }, { threshold: 0.12 });
-document.querySelectorAll('.reveal, .timeline-item').forEach(function(el) { revealObs.observe(el); });
+document.querySelectorAll(’.reveal, .timeline-item’).forEach(function(el) { revealObs.observe(el); });
 function animateCounter(el) {
-  var target = parseInt(el.getAttribute('data-target'), 10);
-  var suffix = el.getAttribute('data-suffix') || '';
-  var steps = 50;
-  var current = 0;
-  var interval = Math.round(1400 / steps);
-  var timer = setInterval(function() {
-    current += Math.ceil(target / steps);
-    if (current >= target) { current = target; clearInterval(timer); }
-    el.textContent = current + suffix;
-  }, interval);
+var target = parseInt(el.getAttribute(‘data-target’), 10);
+var suffix = el.getAttribute(‘data-suffix’) || ‘’;
+var steps = 50;
+var current = 0;
+var interval = Math.round(1400 / steps);
+var timer = setInterval(function() {
+current += Math.ceil(target / steps);
+if (current >= target) { current = target; clearInterval(timer); }
+el.textContent = current + suffix;
+}, interval);
 }
 var counterObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-num[data-target]').forEach(function(el) { counterObs.observe(el); });
-</script>
-
-</body>
-</html>
+entries.forEach(function(e) {
+if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+});
